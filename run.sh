@@ -1,0 +1,1 @@
+sudo mvn package && sudo java -jar target/megamarket-0.0.1-SNAPSHOT.jar
