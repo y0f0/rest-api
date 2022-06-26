@@ -73,4 +73,8 @@ public class ControllerService {
         Instant dateMinusDay = date.minus(1, ChronoUnit.DAYS);
         return repository.getShopUnitByDateBetweenAndType(dateMinusDay, date, ShopUnitType.OFFER);
     }
+
+    public List<ShopUnit> findAll() {
+        return repository.findAll();
+    }
 }

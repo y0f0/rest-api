@@ -25,12 +25,18 @@ public class ApiController {
         this.service = service;
     }
 
+    @GetMapping("/imports")
+    @ResponseStatus(HttpStatus.OK)
+    public List<ShopUnit> getSales() {
+        return service.findAll();
+    }
+
     /**
      * Импортирует новые товары и/или категории. Товары/категории импортированные повторно обновляют текущие.
      * Изменение типа элемента с товара на категорию или с категории на товар не допускается. Порядок элементов в запросе
      * является произвольным.
      *
-     * @param body
+     * @param body body of request.
      */
     @PostMapping("/imports")
     @ResponseStatus(HttpStatus.OK)
