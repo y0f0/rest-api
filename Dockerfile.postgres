@@ -1,0 +1,3 @@
+FROM postgres:12
+COPY test.sql /docker-entrypoint-initdb.d/test.sql
+EXPOSE 5433

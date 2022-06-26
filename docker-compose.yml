@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: 'postgres:10'
+    container_name: 'java-postgres'
+    environment:
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_PASSWORD=mypass'
+      - 'POSTGRES_DB=db'
+
+  app:
+    build: ./
+    container_name: 'pricing-app'
+    ports:
+      - "80:80"
